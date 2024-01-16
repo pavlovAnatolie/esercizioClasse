@@ -20,7 +20,7 @@ public class App
            Studente s1 = new Studente("Pippo","Pascal",new Date(2000,05,10));
            Studente s2 = new Studente("Anatolie", "Pavlov", new Date(2002,12,10));
            Studente s3 = new Studente("Riccardo", "Grandi", new Date(2003,03,7));
-           Studente s4 = new Studente("Alessio", "Didilescu", new Date(2000,05,10));
+           Studente s4 = new Studente("Alessio", "Didilescu", new Date(2004,04,03));
            Studente s5 = new Studente("Gigi", "Topolone", new Date(2005,06,19));
 
 
@@ -42,15 +42,11 @@ public class App
             String cls = xmlMapper.writeValueAsString(classe);
             System.out.println(cls);
 
-            server.accept();  
-
             out.writeBytes(cls+"\n");
 
 
             s.close();
             server.close();
-
-            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 /**
  * Hello world!
  *
@@ -21,6 +23,7 @@ public class App
             Socket s = new Socket("localhost", 3000);
             BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
 
+            //XmlMapper xmlMapper = new XmlMapper();
             Classe classe = xmlMapper.readValue(in.readLine(), Classe.class);
             System.out.println(classe.toString());
             s.close();

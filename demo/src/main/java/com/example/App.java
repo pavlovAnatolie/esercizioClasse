@@ -17,11 +17,11 @@ public class App
 {
     public static void main( String[] args )
     {
-           Studente s1 = new Studente("Pippo","Pascal",new Date(2000));
-           Studente s2 = new Studente("Anatolie", "Pavlov", new Date(2002));
-           Studente s3 = new Studente("Riccardo", "Grandi", new Date(2003));
-           Studente s4 = new Studente("Alessio", "Didilescu", new Date(2000));
-           Studente s5 = new Studente("Gigi", "Topolone", new Date(2005));
+           Studente s1 = new Studente("Pippo","Pascal",new Date(2000,05,10));
+           Studente s2 = new Studente("Anatolie", "Pavlov", new Date(2002,12,10));
+           Studente s3 = new Studente("Riccardo", "Grandi", new Date(2003,03,7));
+           Studente s4 = new Studente("Alessio", "Didilescu", new Date(2000,05,10));
+           Studente s5 = new Studente("Gigi", "Topolone", new Date(2005,06,19));
 
 
            Classe classe = new Classe(5, "DIA", "08-2W");

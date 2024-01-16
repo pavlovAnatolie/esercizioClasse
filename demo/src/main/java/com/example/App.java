@@ -5,6 +5,9 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Date;
+
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 /**
  * Hello world!
@@ -14,35 +17,40 @@ public class App
 {
     public static void main( String[] args )
     {
-        try{
-           ServerSocket server = new ServerSocket(3000);
-
-           Studente s1 = new Studente("Pippo", "Pascal", 15);
-           Studente s2 = new Studente("Anatolie", "Pavlov", 20);
-           Studente s3 = new Studente("Riccardo", "Grandi", 19);
-           Studente s4 = new Studente("Alessio", "Didilescu", 18);
-           Studente s5 = new Studente("Gigi", "Topolone", 4);
+           Studente s1 = new Studente("Pippo","Pascal",new Date(2000));
+           Studente s2 = new Studente("Anatolie", "Pavlov", new Date(2002));
+           Studente s3 = new Studente("Riccardo", "Grandi", new Date(2003));
+           Studente s4 = new Studente("Alessio", "Didilescu", new Date(2000));
+           Studente s5 = new Studente("Gigi", "Topolone", new Date(2005));
 
 
-           Classe classe = new Classe("5DIA", "Francesco Capezio");
+           Classe classe = new Classe(5, "DIA", "08-2W");
            classe.addStudente(s1);
            classe.addStudente(s2);
            classe.addStudente(s3);
            classe.addStudente(s4);
            classe.addStudente(s5);
 
+        try{
+           ServerSocket server = new ServerSocket(3000);
+            
+            System.out.println("il server è in ascolto");
+            Socket s = server.accept();
+            DataOutputStream out = new DataOutputStream(s.getOutputStream());
 
-           System.out.println("il server è in ascolto");
-           Socket s = server.accept();
+            XmlMapper xmlMapper = new XmlMapper();
+            String cls = xmlMapper.writeValueAsString(classe);
+            System.out.println(cls);
 
-           DataOutputStream out = new DataOutputStream(s.getOutputStream());
+            server.accept();  
 
-            out.writeBytes(classe.inviaOggetto()+"\n");
+            out.writeBytes(cls+"\n");
+
 
             s.close();
             server.close();
 
-        server.accept();  
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -1,20 +1,54 @@
 package com.example;
 
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Studente {
     private String nome;
     private String cognome;
-    private int eta;
+    private Date dataDiNascita;
 
-    public Studente(String nome, String cognome, int eta){
+   
+    public Studente(String nome, String cognome, Date dataDiNascita){
         this.nome = nome;
         this.cognome = cognome;
-        this.eta = eta;
+        this.dataDiNascita = dataDiNascita;
+    } 
+
+    
+
+    public Studente() {
     }
+
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public Date getDataDiNascita() {
+        return dataDiNascita;
+    }
+
+    public void setDataDiNascita(Date dataDiNascita) {
+        this.dataDiNascita = dataDiNascita;
+    }
+
 
     @Override
     public String toString() {
-        return "*Nome: "+nome+" *Cognome: "+cognome+" *eta: "+eta;
+        return "Nome: "+nome+" \tCognome: "+cognome+" \tNato il: "+dataDiNascita;
     }
 }

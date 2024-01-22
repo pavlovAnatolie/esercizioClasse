@@ -68,6 +68,24 @@ public class Classe {
         return s;
     }
 
+
+
+    /* System.out.println("-------- JSON -------");
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        // Serializzazione su stringa
+        String s2 = objectMapper.writeValueAsString(a);
+        System.out.println(s2);
+
+        // Serializzazione su file
+        objectMapper.writeValue(new File("test.json"), a);
+
+        // Deserializzazione
+        Alunno c = objectMapper.readValue(s2, Alunno.class); // da stringa
+        // Alunno c = objectMapper.readValue(new File("test.json"), Alunno.class); // da file
+        System.out.println(c.cognome);
+        System.out.println(c.nome); */
+
     
     
 }

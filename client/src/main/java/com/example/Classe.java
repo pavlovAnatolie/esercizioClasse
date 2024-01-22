@@ -1,4 +1,5 @@
-package main.java.com.example;
+package com.example;
+
 import java.util.ArrayList;
 
 public class Classe {

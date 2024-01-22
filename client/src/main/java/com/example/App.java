@@ -23,7 +23,7 @@ public class App
             Socket s = new Socket("localhost", 3000);
             BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
 
-            //XmlMapper xmlMapper = new XmlMapper();
+            XmlMapper xmlMapper = new XmlMapper();
             Classe classe = xmlMapper.readValue(in.readLine(), Classe.class);
             System.out.println(classe.toString());
             s.close();
